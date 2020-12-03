@@ -1,0 +1,19 @@
+{
+  "name": "examportfolio",
+  "version": "1.0.0",
+  "description": "sujet examen DWWM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tambass/examPortfolio.git"
+  },
+  "author": "Fabien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tambass/examPortfolio/issues"
+  },
+  "homepage": "https://github.com/Tambass/examPortfolio#readme"
+}
