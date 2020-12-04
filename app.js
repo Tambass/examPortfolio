@@ -39,6 +39,11 @@ require("dotenv").config();
 
 app.use(methodOverride("_method"));
 
+// --------EJS--------
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
