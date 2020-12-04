@@ -35,6 +35,10 @@ app.use(
 
 require("dotenv").config();
 
+// --------MethodOverride--------
+
+app.use(methodOverride("_method"));
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
