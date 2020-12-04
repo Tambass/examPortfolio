@@ -15,6 +15,22 @@ const fileupload = require("express-fileupload");
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+app.use(logger("dev"));
+app.use(cookieParser());
+
+// --------Express Session
+
+app.use(
+    session({
+        secret: "secret",
+        resave: false,
+        saveUninitialized: true,
+        name: "cookie",
+        rolling: true,
+        cookie: {maxAge: 1*60*60*1000},
+    })
+)
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
