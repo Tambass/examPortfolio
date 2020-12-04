@@ -73,6 +73,11 @@ global.query = query;
 
 app.use(fileupload());
 
+// --------Users Routes--------
+
+const usersRoutes = require("./routes/usersRoutes");
+usersRoutes(app);
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
