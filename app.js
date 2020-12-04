@@ -69,6 +69,10 @@ const query = util.promisify(db.query).bind(db);
 global.db = db;
 global.query = query;
 
+// --------FileUpload--------
+
+app.use(fileupload());
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
