@@ -10,6 +10,10 @@ const util = require("util");
 const session = require("express-session");
 const fileupload = require("express-fileupload");
 
+// --------Body Parser--------
+
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
