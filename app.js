@@ -78,6 +78,11 @@ app.use(fileupload());
 const usersRoutes = require("./routes/usersRoutes");
 usersRoutes(app);
 
+// --------Admin Routes--------
+
+const adminRoutes = require("./routes/adminRoutes");
+adminRoutes(app);
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
