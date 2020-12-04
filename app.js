@@ -44,6 +44,31 @@ app.use(methodOverride("_method"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// --------Setup Public Folder--------
+
+app.use(express.static("./public/"));
+
+// --------MySQL--------
+
+const db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_DATA,
+    multipleStatements: true,
+})
+
+db.connect((err) => {
+    if(err) {
+        throw err;
+    }
+    console.log("Connecté à MySQL");
+})
+
+const query = util.promisify(db.query).bind(db);
+global.db = db;
+global.query = query;
+
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
 })
