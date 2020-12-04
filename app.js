@@ -80,8 +80,8 @@ usersRoutes(app);
 
 // --------Admin Routes--------
 
-// const adminRoutes = require("./routes/adminRoutes");
-// adminRoutes(app);
+const adminRoutes = require("./routes/adminRoutes");
+adminRoutes(app);
 
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
