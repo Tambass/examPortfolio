@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(logger("dev"));
 app.use(cookieParser());
 
-// --------Express Session
+// --------Express Session--------
 
 app.use(
     session({
@@ -30,6 +30,10 @@ app.use(
         cookie: {maxAge: 1*60*60*1000},
     })
 )
+
+// --------Dotenv--------
+
+require("dotenv").config();
 
 app.listen(PORT, function(){
     console.log("Ecoute le port : ", PORT);
