@@ -46,7 +46,7 @@ app.set("view engine", "ejs");
 
 // --------Setup Public Folder--------
 
-app.use(express.static("./public/"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // --------MySQL--------
 
