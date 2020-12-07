@@ -87,3 +87,20 @@ html {
 .layer {
     margin: 150px 50px;
 }
+
+/*CITATIONS*/
+.quote{
+    padding: 20px 400px;
+}
+
+.quote-image{
+    margin: 50px 0;
+}
+
+.quote-content {
+    display: flex;
+    justify-content: center;
+}
+.quote-content p{
+    font-size: 3rem;
+}
