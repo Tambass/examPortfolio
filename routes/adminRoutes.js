@@ -13,6 +13,9 @@ module.exports = function (app) {
     // AdminSkillsPage
     const {getSkillsPage} = require("../controllers/admin_controllers/admin_skills");
 
+    // AdminCategoriesPage
+    const {getCategoriesPage} = require("../controllers/admin_controllers/admin_categories");
+
     // ****USERS ROUTES****
 
     app.route("/admin").get(getAdminPage);
@@ -22,4 +25,6 @@ module.exports = function (app) {
     app.route("/admin/portfolio").get(getPortfolioPage);
 
     app.route("/admin/skills").get(getSkillsPage);
+
+    app.route("/admin/categories").get(getCategoriesPage);
 }
