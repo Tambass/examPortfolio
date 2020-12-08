@@ -10,6 +10,9 @@ module.exports = function (app) {
     // AdminPortfolioPage
     const {getPortfolioPage} = require("../controllers/admin_controllers/admin_portfolio");
 
+    // AdminSkillsPage
+    const {getSkillsPage} = require("../controllers/admin_controllers/admin_skills");
+
     // ****USERS ROUTES****
 
     app.route("/admin").get(getAdminPage);
@@ -17,4 +20,6 @@ module.exports = function (app) {
     app.route("/admin/about").get(getAboutPage);
 
     app.route("/admin/portfolio").get(getPortfolioPage);
+
+    app.route("/admin/skills").get(getSkillsPage);
 }
