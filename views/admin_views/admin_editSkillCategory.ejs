@@ -1,0 +1,40 @@
+<%- include('../partials/admin_partials/admin_header.ejs') -%>
+
+<%- include('../partials/admin_partials/admin-sidebar.ejs') -%>
+
+<div class="main">
+
+    <section class="title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Edit Skill Category</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="formulaire">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form>
+                        <div class="form-group">
+                          <label for="categoryName">Nom de la catégorie de compétence</label>
+                          <input type="text" class="form-control" id="categoryName" name="categoryName" value="< %= % >">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                        <a href="/admin/categories">
+                            <button type="button" class="btn btn-secondary">Annuler</button>
+                        </a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<%- include('../partials/admin_partials/admin_footer.ejs') -%>
