@@ -13,6 +13,45 @@
             </div>
         </div>
     </section>
+
+    <section class="formulaire">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form>
+                        <div class="form-group">
+                          <label for="projectName">Nom du projet</label>
+                          <input type="text" class="form-control" id="projectName" name="projectName">
+                        </div>
+                        <div class="form-group">
+                            <label for="projectLink">Lien du projet</label>
+                            <input type="text" class="form-control" id="projectLink" name="projectLink">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="category">Catégorie</label>
+                                <select class="custom-select mr-sm-2" name="category" id="category">
+                                    <option selected>Choisir...</option>
+                                    <option value="1">Site web</option>
+                                    <option value="2">Application Mobile</option>
+                                    <option value="3">Application desktop</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="file" class="form-control-file" name="image">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                        <a href="/admin/portfolio">
+                            <button type="button" class="btn btn-secondary">Annuler</button>
+                        </a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
     
 </div>
 
