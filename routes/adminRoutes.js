@@ -8,13 +8,27 @@ module.exports = function (app) {
     const {getAboutPage} = require("../controllers/admin_controllers/admin_about");
 
     // AdminPortfolioPage
-    const {getPortfolioPage, getAddProjectPage, getEditProjectPage} = require("../controllers/admin_controllers/admin_portfolio");
+    const {
+        getPortfolioPage,
+        getAddProjectPage,
+        getEditProjectPage
+    } = require("../controllers/admin_controllers/admin_portfolio");
 
     // AdminSkillsPage
-    const {getSkillsPage, getAddSkillPage, getEditSkillPage} = require("../controllers/admin_controllers/admin_skills");
+    const {
+        getSkillsPage,
+        getAddSkillPage,
+        getEditSkillPage
+    } = require("../controllers/admin_controllers/admin_skills");
 
     // AdminCategoriesPage
-    const {getCategoriesPage} = require("../controllers/admin_controllers/admin_categories");
+    const {
+        getCategoriesPage,
+        getAddProjectCategoryPage,
+        getEditProjectCategoryPage,
+        getAddSkillCategoryPage,
+        getEditSkillCategoryPage
+    } = require("../controllers/admin_controllers/admin_categories");
 
     // ****USERS ROUTES****
 
@@ -31,4 +45,8 @@ module.exports = function (app) {
     app.route("/admin/skills/edit").get(getEditSkillPage);
 
     app.route("/admin/categories").get(getCategoriesPage);
+    app.route("/admin/categories/add_project_category").get(getAddProjectCategoryPage);
+    app.route("/admin/categories/edit_project_category").get(getEditProjectCategoryPage);
+    app.route("/admin/categories/add_skill_category").get(getAddSkillCategoryPage);
+    app.route("/admin/categories/edit_skill_category").get(getEditSkillCategoryPage);
 }
