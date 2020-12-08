@@ -9,18 +9,37 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+/*HEADER*/
+section.header{
+    width: 100%;
+    padding: 50px 20px;
+    background-color: #111;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.header a {
+    color: #fff;
+    font-size: 3rem;
+}
+
+section.header h1 {
+    color: #fff;
+}
+
 /*SIDEBAR*/
 
 .sidenav {
     height: 100%;
-    width: 160px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 200px;
   }
   
   .sidenav a {
@@ -36,7 +55,7 @@ html {
   }
   
   .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
+    margin-left: 200px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
   }
