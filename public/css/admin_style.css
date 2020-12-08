@@ -9,6 +9,10 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 /*HEADER*/
 section.header{
     width: 100%;
@@ -44,7 +48,7 @@ section.header h1 {
   
   .sidenav a {
     padding: 6px 8px 6px 16px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 25px;
     color: #818181;
     display: block;

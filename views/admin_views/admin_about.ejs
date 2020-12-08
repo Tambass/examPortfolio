@@ -4,7 +4,155 @@
 
 <div class="main">
 
-    <h1>ABOUT</h1>
+    <section class="title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>ABOUT</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+
+                    <div class="card" style="width: 500px;">
+                        <img class="card-img-top" src="/images/hypercube.png" alt="logo" style="width: 150px; height: 150px;">
+                        <div class="card-body">
+                          <p class="card-text">Firstname : Fabien</p>
+                          <p class="card-text">Lastname : Faguet</p>
+                          <p class="card-text">Email : fabienfaguet.dev@gmail.com</p>
+                          <p class="card-text">Phone : 0624488180</p>
+                          <p class="card-text">Address : La Fouinière</p>
+                          <p class="card-text">Zipcode : 85310</p>
+                          <p class="card-text">City : La Chaize Le Vicomte</p>
+                          <p class="card-text">Status : Disponible</p>
+                        </div>
+                      </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="edit-profile">
+
+                        <!-- Edit button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProfile">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </button>
+                    
+                        <!-- Edit Modal -->
+                        <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modifier le profile</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    
+                                        <form>
+
+                                            <div class="form-group">
+                                            <label for="firstname">Prénom</label>
+                                            <input type="text" class="form-control" name="firstname" id="firstname" value="< %= % >">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="lastname">Nom</label>
+                                                <input type="text" class="form-control" name="lastname" id="lastname" value="< %= % >">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" name="email" id="email" value="< %= % >">
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <label for="phone">Téléphone</label>
+                                                <input type="text" class="form-control" name="phone" id="phone" value="< %= % >">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="address">Adresse</label>
+                                                <input type="text" class="form-control" name="address" id="address" value="< %= % >">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="zipcode">Code postal</label>
+                                                <input type="text" class="form-control" name="zipcode" id="zipcode" value="< %= % >">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="city">Ville</label>
+                                                <input type="text" class="form-control" name="city" id="city" value="< %= % >">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Modifier</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+
+                                        </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="change-password">
+
+                        <!-- Change password button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#changePass">
+                            <i class="fab fa-expeditedssl"></i>
+                            Change Password
+                        </button>
+                    
+                        <!-- Password Modal -->
+                        <div class="modal fade" id="changePass" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Modifier le mot de passe</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    
+                                        <form>
+
+                                            <div class="form-group">
+                                            <label for="password">Mot de passe</label>
+                                            <input type="text" class="form-control" name="password" id="password" value="< %= % >">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Modifier</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+
+                                        </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
 </div>
 
