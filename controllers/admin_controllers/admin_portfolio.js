@@ -11,7 +11,7 @@ module.exports = {
     // AFFICHE LA PAGE DES PROJETS
     getPortfolioPage: async (req, res) => {
 
-        const project = await query("SELECT project_id, name, status FROM Project");
+        const project = await query("SELECT project_id AS id, name, status FROM Project");
 
         try {
             res.render("admin_views/admin_portfolio", {
@@ -70,7 +70,23 @@ module.exports = {
         });
     },
 
-    getEditProjectPage: (req, res) => {
-        res.render("admin_views/admin_editProject", {title: "Edit project"});
+    // AFFICHE LA PAGE D'EDITION D'UN PROJET
+    getEditProjectPage: async (req, res) => {
+
+        const id = req.params.id;
+
+        const project = await query("SELECT p.project_id AS id, p.name, p.description, p.image, p.link, p.project_category_id AS categoryId, pc.name AS category FROM Project AS p INNER JOIN Project_Category AS pc ON pc.project_category_id = p.project_category_id WHERE project_id = '" + id + "';");
+
+        const category = await query("SELECT project_category_id AS id, name FROM Project_Category;");
+
+        try {
+            res.render("admin_views/admin_editProject", {
+                title: "Edit project",
+                project: project[0],
+                category,
+            });            
+        } catch (err) {
+            res.send(err);
+        }
     },
 }
