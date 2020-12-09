@@ -89,4 +89,38 @@ module.exports = {
             res.send(err);
         }
     },
+
+    // MET A JOUR UN PROJET
+    editProject: (req, res) => {
+        
+        const body = req.body;
+        const id = req.params.id;
+
+        const { name } = body;
+        const { content } = body;
+        const { link } = body;
+        const { categoryId } = body;
+        const { image } = req.files;
+        const imageName = image.name;
+
+        const fileUpload = path.resolve(
+            __dirname,
+            "../../public/images/",
+            imageName
+        );
+
+        const upload = image.mv(fileUpload);
+
+        const query = "UPDATE Project SET name = '" + 
+        name + "', description = '" + content + "', image = '" + 
+        imageName + "', link = '" + link + "', project_category_id = '" + 
+        categoryId + "' WHERE project_id = '" + id + "';";
+
+        db.query(query, upload, (err, result) => {
+            if(err) {
+               return res.send(err);
+            }
+            res.redirect("/admin/portfolio");
+        });
+    },
 }

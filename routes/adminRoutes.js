@@ -13,6 +13,7 @@ module.exports = function (app) {
         getAddProjectPage,
         getEditProjectPage,
         addProject,
+        editProject,
     } = require("../controllers/admin_controllers/admin_portfolio");
 
     // AdminSkillsPage
@@ -39,7 +40,7 @@ module.exports = function (app) {
 
     app.route("/admin/portfolio").get(getPortfolioPage);
     app.route("/admin/portfolio/add").get(getAddProjectPage).post(addProject);
-    app.route("/admin/portfolio/edit/:id").get(getEditProjectPage);
+    app.route("/admin/portfolio/edit/:id").get(getEditProjectPage).put(editProject);
 
     app.route("/admin/skills").get(getSkillsPage);
     app.route("/admin/skills/add").get(getAddSkillPage);
