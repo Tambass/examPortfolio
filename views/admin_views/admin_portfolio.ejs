@@ -53,7 +53,11 @@
                                 </a>
                             </td>
                             <td>
-                                <i class="fas fa-trash" style="color: red;"></i>
+                                <form method="post" action="/admin/portfolio/delete/<%= project.id %>?_method=DELETE">
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fas fa-trash" style="color: #fff;"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         <% }); %>

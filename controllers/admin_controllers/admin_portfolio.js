@@ -123,4 +123,19 @@ module.exports = {
             res.redirect("/admin/portfolio");
         });
     },
+
+    // SUPPRIME UN PROJET
+    deleteProject: (req, res) => {
+
+        const id = req.params.id;
+
+        const query = "DELETE FROM Project WHERE project_id = '" + id + "';";
+
+        db.query(query, (err, result) => {
+            if(err) {
+                return res.send(err);
+            }
+            res.redirect("/admin/portfolio");
+        })
+    }
 }
