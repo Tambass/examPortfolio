@@ -137,5 +137,21 @@ module.exports = {
             }
             res.redirect("/admin/portfolio");
         })
+    },
+
+    // CHANGE LE STATUS D'UN PROJET
+    changeProjectStatus: (req, res) => {
+
+        const id = req.params.id;
+
+        const project = "UPDATE Project SET status = (CASE WHEN status=0 THEN 1 WHEN status=1 THEN 0 ELSE status END) WHERE project_id = '" +
+        id + "';";
+
+        db.query(project, (err, result) => {
+            if(err) {
+                return res.send(err);
+            }
+            res.redirect("/admin/portfolio");
+        })
     }
 }
