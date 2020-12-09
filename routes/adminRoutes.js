@@ -22,7 +22,11 @@ module.exports = function (app) {
     const {
         getSkillsPage,
         getAddSkillPage,
-        getEditSkillPage
+        getEditSkillPage,
+        addSkill,
+        editSkill,
+        deleteSkill,
+        changeSkillStatus,
     } = require("../controllers/admin_controllers/admin_skills");
 
     // AdminCategoriesPage
@@ -47,8 +51,10 @@ module.exports = function (app) {
     app.route("/admin/portfolio/status/:id").put(changeProjectStatus);
 
     app.route("/admin/skills").get(getSkillsPage);
-    app.route("/admin/skills/add").get(getAddSkillPage);
-    app.route("/admin/skills/edit").get(getEditSkillPage);
+    app.route("/admin/skills/add").get(getAddSkillPage).post(addSkill);
+    app.route("/admin/skills/edit/:id").get(getEditSkillPage).put(editSkill);
+    app.route("/admin/skills/delete/:id").delete(deleteSkill);
+    app.route("/admin/skills/status/:id").put(changeSkillStatus);
 
     app.route("/admin/categories").get(getCategoriesPage);
     app.route("/admin/categories/add_project_category").get(getAddProjectCategoryPage);
