@@ -24,8 +24,50 @@ module.exports = {
     },
 
     // AFFICHE LA PAGE D'AJOUT D'UN PROJET
-    getAddProjectPage: (req, res) => {
-        res.render("admin_views/admin_addProject", {title: "Add project"});
+    getAddProjectPage: async (req, res) => {
+
+        const category = await query("SELECT project_category_id AS id, name FROM Project_Category;");
+
+        try {
+            res.render("admin_views/admin_addProject", {
+                title: "Add project",
+                category,
+            });
+        } catch (err) {
+            res.send(err);
+        }
+    },
+
+    // AJOUTE UN PROJET
+    addProject: (req, res) => {
+
+        const body = req.body;
+
+        const { name } = body;
+        const { content } = body;
+        const { link } = body;
+        const { categoryId } = body;
+        const { image } = req.files;
+        const imageName = image.name;
+
+        const fileUpload = path.resolve(
+            __dirname,
+            "../../public/images/",
+            imageName
+        );
+
+        const upload = image.mv(fileUpload);
+
+        const query = 
+        "INSERT INTO Project (status, name, description, image, link, project_category_id) VALUES (true, '" +
+        name + "', '" + content + "', '" + imageName + "', '" + link + "', '" + categoryId + "');";
+
+        db.query(query, upload, (err, result) => {
+            if(err) {
+                return res.send(err);
+            }
+            res.redirect("/admin/portfolio")
+        });
     },
 
     getEditProjectPage: (req, res) => {

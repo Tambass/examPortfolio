@@ -11,7 +11,8 @@ module.exports = function (app) {
     const {
         getPortfolioPage,
         getAddProjectPage,
-        getEditProjectPage
+        getEditProjectPage,
+        addProject,
     } = require("../controllers/admin_controllers/admin_portfolio");
 
     // AdminSkillsPage
@@ -37,7 +38,7 @@ module.exports = function (app) {
     app.route("/admin/about").get(getAboutPage);
 
     app.route("/admin/portfolio").get(getPortfolioPage);
-    app.route("/admin/portfolio/add").get(getAddProjectPage);
+    app.route("/admin/portfolio/add").get(getAddProjectPage).post(addProject);
     app.route("/admin/portfolio/edit").get(getEditProjectPage);
 
     app.route("/admin/skills").get(getSkillsPage);
