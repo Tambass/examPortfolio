@@ -1,4 +1,14 @@
+const express = require("express");
+const fileupload = require("express-fileupload");
+const path = require("path");
+
+const app = express();
+
+// FileUpload
+app.use(fileupload());
+
 module.exports = {
+    // AFFICHE LA PAGE DES PROJETS
     getPortfolioPage: async (req, res) => {
 
         const project = await query("SELECT project_id, name, status FROM Project");
@@ -13,6 +23,7 @@ module.exports = {
         }
     },
 
+    // AFFICHE LA PAGE D'AJOUT D'UN PROJET
     getAddProjectPage: (req, res) => {
         res.render("admin_views/admin_addProject", {title: "Add project"});
     },
