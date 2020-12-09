@@ -39,44 +39,26 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: green;"></i>
-                            </th>
-                            <td>Site Web</td>
-                            <td>
-                                <a href="/admin/categories/edit_project_category">
-                                    <i class="fas fa-edit"></i>                                
-                                </a>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash" style="color: red;"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: green;"></i>
-                            </th>
-                            <td>Application Mobile</td>
-                            <td>
-                                <i class="fas fa-edit"></i>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: red;"></i>
-                            </th>
-                            <td>Application Desktop</td>
-                            <td>
-                                <i class="fas fa-edit"></i>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash"></i>
-                            </td>
-                        </tr>
+                            <% projectCategory.forEach(function(projectCategory){ %>
+                            <tr>
+                                <th scope="row">
+                                    <% if(projectCategory.status>0) {%>
+                                        <i class="fas fa-circle" style="color: green;"></i>
+                                    <%} else {%>
+                                        <i class="fas fa-circle" style="color: red;"></i>
+                                    <% } %>
+                                </th>
+                                <td><%= projectCategory.name %></td>
+                                <td>
+                                    <a href="/admin/categories/edit_project_category">
+                                        <i class="fas fa-edit"></i>                                
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="fas fa-trash" style="color: red;"></i>
+                                </td>
+                            </tr>
+                            <% }) %>
                         </tbody>
                     </table>
 
@@ -107,56 +89,26 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: green;"></i>
-                            </th>
-                            <td>Front-End</td>
-                            <td>
-                                <a href="/admin/categories/edit_skill_category">
-                                    <i class="fas fa-edit"></i>                                
-                                </a>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash" style="color: red;"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: green;"></i>
-                            </th>
-                            <td>Back-End</td>
-                            <td>
-                                <i class="fas fa-edit"></i>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: red;"></i>
-                            </th>
-                            <td>Database</td>
-                            <td>
-                                <i class="fas fa-edit"></i>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <i class="fas fa-circle" style="color: red;"></i>
-                            </th>
-                            <td>DevOps</td>
-                            <td>
-                                <i class="fas fa-edit"></i>
-                            </td>
-                            <td>
-                                <i class="fas fa-trash"></i>
-                            </td>
-                        </tr>
+                            <% skillCategory.forEach(function(skillCategory){ %>
+                            <tr>
+                                <th scope="row">
+                                    <% if(skillCategory.status>0) {%>
+                                        <i class="fas fa-circle" style="color: green;"></i>
+                                    <%} else {%>
+                                        <i class="fas fa-circle" style="color: red;"></i>
+                                    <% } %>
+                                </th>
+                                <td><%= skillCategory.name %></td>
+                                <td>
+                                    <a href="/admin/categories/edit_project_category">
+                                        <i class="fas fa-edit"></i>                                
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="fas fa-trash" style="color: red;"></i>
+                                </td>
+                            </tr>
+                            <% }) %>
                         </tbody>
                     </table>
 
