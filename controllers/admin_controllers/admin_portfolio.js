@@ -1,6 +1,16 @@
 module.exports = {
-    getPortfolioPage: (req, res) => {
-        res.render("admin_views/admin_portfolio", {title: "Admin Portfolio"});
+    getPortfolioPage: async (req, res) => {
+
+        const project = await query("SELECT project_id, name, status FROM Project");
+
+        try {
+            res.render("admin_views/admin_portfolio", {
+                title: "Admin Portfolio",
+                project,
+            });        
+        } catch (err) {
+            res.send(err);
+        }
     },
 
     getAddProjectPage: (req, res) => {
