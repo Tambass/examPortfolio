@@ -99,10 +99,10 @@ module.exports = {
         
         const id = req.params.id;
 
-        const skill = "UPDATE Project_Category SET status = (CASE WHEN status=0 THEN 1 WHEN status=1 THEN 0 ELSE status END) WHERE project_category_id = '" +
+        const status = "UPDATE Project_Category SET status = (CASE WHEN status=0 THEN 1 WHEN status=1 THEN 0 ELSE status END) WHERE project_category_id = '" +
         id + "';";
 
-        db.query(skill, (err, result) => {
+        db.query(status, (err, result) => {
             if(err) {
                 return res.send(err);
             }
@@ -190,10 +190,10 @@ module.exports = {
 
         const id = req.params.id;
 
-        const skill = "UPDATE Technology_Category SET status = (CASE WHEN status=0 THEN 1 WHEN status=1 THEN 0 ELSE status END) WHERE technology_category_id = '" +
+        const status = "UPDATE Technology_Category SET status = (CASE WHEN status=0 THEN 1 WHEN status=1 THEN 0 ELSE status END) WHERE technology_category_id = '" +
         id + "';";
 
-        db.query(skill, (err, result) => {
+        db.query(status, (err, result) => {
             if(err) {
                 return res.send(err);
             }

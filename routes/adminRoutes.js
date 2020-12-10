@@ -8,7 +8,11 @@ module.exports = function (app) {
     const {getAdminPage} = require("../controllers/admin_controllers/admin_homePage");
 
     // AboutPage
-    const {getAboutPage} = require("../controllers/admin_controllers/admin_about");
+    const {
+        getAboutPage,
+        editProfile,
+        // editPass,
+    } = require("../controllers/admin_controllers/admin_about");
 
     // AdminPortfolioPage
     const {
@@ -58,6 +62,7 @@ module.exports = function (app) {
 
     // ADMIN ABOUT PAGE
     app.route("/admin/about").get(getAboutPage);
+    app.route("/admin/about/:id").put(editProfile);
 
     // ADMIN PORTFOLIO PAGE
     app.route("/admin/portfolio").get(getPortfolioPage);

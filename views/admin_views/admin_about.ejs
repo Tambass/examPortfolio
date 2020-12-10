@@ -57,41 +57,41 @@
                                     </div>
                                     <div class="modal-body">
                                     
-                                        <form>
+                                        <form method="POST" action="/admin/about/<%= admin.id%>?_method=PUT">
 
                                             <div class="form-group">
                                             <label for="firstname">Prénom</label>
-                                            <input type="text" class="form-control" name="firstname" id="firstname" value="< %= % >">
+                                            <input type="text" class="form-control" name="firstname" id="firstname" value="<%= admin.firstname %>">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="lastname">Nom</label>
-                                                <input type="text" class="form-control" name="lastname" id="lastname" value="< %= % >">
+                                                <input type="text" class="form-control" name="lastname" id="lastname" value="<%= admin.lastname %>">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="email">Email</label>
-                                                <input type="email" class="form-control" name="email" id="email" value="< %= % >">
+                                                <input type="email" class="form-control" name="email" id="email" value="<%= admin.email %>">
                                             </div>
     
                                             <div class="form-group">
                                                 <label for="phone">Téléphone</label>
-                                                <input type="text" class="form-control" name="phone" id="phone" value="< %= % >">
+                                                <input type="text" class="form-control" name="phone" id="phone" value="<%= admin.phone %>">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="address">Adresse</label>
-                                                <input type="text" class="form-control" name="address" id="address" value="< %= % >">
+                                                <input type="text" class="form-control" name="address" id="address" value="<%= admin.adress %>">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="zipcode">Code postal</label>
-                                                <input type="text" class="form-control" name="zipcode" id="zipcode" value="< %= % >">
+                                                <input type="text" class="form-control" name="zipcode" id="zipcode" value="<%= admin.zipcode %>">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="city">Ville</label>
-                                                <input type="text" class="form-control" name="city" id="city" value="< %= % >">
+                                                <input type="text" class="form-control" name="city" id="city" value="<%= admin.city %>">
                                             </div>
 
                                             <button type="submit" class="btn btn-primary">Modifier</button>
