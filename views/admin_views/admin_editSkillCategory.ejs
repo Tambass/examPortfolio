@@ -19,10 +19,10 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <form>
+                    <form method="POST" action="/admin/categories/edit_skill_category/<%= skillCategory.id %>?_method=PUT">
                         <div class="form-group">
                           <label for="categoryName">Nom de la catégorie de compétence</label>
-                          <input type="text" class="form-control" id="categoryName" name="categoryName" value="< %= % >">
+                          <input type="text" class="form-control" id="categoryName" name="name" value="<%= skillCategory.name %>">
                         </div>
                         <button type="submit" class="btn btn-primary">Modifier</button>
                         <a href="/admin/categories">

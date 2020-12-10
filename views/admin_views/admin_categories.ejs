@@ -42,20 +42,30 @@
                             <% projectCategory.forEach(function(projectCategory){ %>
                             <tr>
                                 <th scope="row">
-                                    <% if(projectCategory.status>0) {%>
-                                        <i class="fas fa-circle" style="color: green;"></i>
-                                    <%} else {%>
-                                        <i class="fas fa-circle" style="color: red;"></i>
-                                    <% } %>
+                                    <form method="post" action="/admin/categories/status_project_category/<%= projectCategory.id %>?_method=PUT">
+                                        <% if(projectCategory.status>0) {%>
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-circle" style="color: green;"></i>
+                                            </button>
+                                        <%} else {%>
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-circle" style="color: red;"></i>
+                                            </button>
+                                        <% } %>
+                                    </form>
                                 </th>
                                 <td><%= projectCategory.name %></td>
                                 <td>
-                                    <a href="/admin/categories/edit_project_category">
+                                    <a href="/admin/categories/edit_project_category/<%= projectCategory.id %>">
                                         <i class="fas fa-edit"></i>                                
                                     </a>
                                 </td>
                                 <td>
-                                    <i class="fas fa-trash" style="color: red;"></i>
+                                    <form method="POST" action="/admin/categories/delete_project_category/<%= projectCategory.id %>?_method=DELETE">
+                                        <button type="submit" class="btn">
+                                            <i class="fas fa-trash" style="color: red;"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             <% }) %>
@@ -92,20 +102,30 @@
                             <% skillCategory.forEach(function(skillCategory){ %>
                             <tr>
                                 <th scope="row">
-                                    <% if(skillCategory.status>0) {%>
-                                        <i class="fas fa-circle" style="color: green;"></i>
-                                    <%} else {%>
-                                        <i class="fas fa-circle" style="color: red;"></i>
-                                    <% } %>
+                                    <form method="post" action="/admin/categories/status_skill_category/<%= skillCategory.id %>?_method=PUT">
+                                        <% if(skillCategory.status>0) {%>
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-circle" style="color: green;"></i>
+                                            </button>
+                                        <%} else {%>
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-circle" style="color: red;"></i>
+                                            </button>
+                                        <% } %>
+                                    </form>
                                 </th>
                                 <td><%= skillCategory.name %></td>
                                 <td>
-                                    <a href="/admin/categories/edit_project_category">
+                                    <a href="/admin/categories/edit_skill_category/<%= skillCategory.id %>">
                                         <i class="fas fa-edit"></i>                                
                                     </a>
                                 </td>
                                 <td>
-                                    <i class="fas fa-trash" style="color: red;"></i>
+                                    <form method="POST" action="/admin/categories/delete_skill_category/<%= skillCategory.id %>?_method=DELETE">
+                                        <button type="submit" class="btn">
+                                            <i class="fas fa-trash" style="color: red;"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             <% }) %>

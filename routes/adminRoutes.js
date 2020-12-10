@@ -37,13 +37,13 @@ module.exports = function (app) {
         getAddSkillCategoryPage,
         getEditSkillCategoryPage,
         addProjectCategory,
-        // editProjectCategory,
-        // deleteProjectCategory,
-        // changeProjectCategoryStatus,
+        editProjectCategory,
+        deleteProjectCategory,
+        changeProjectCategoryStatus,
         addSkillCategory,
-        // editSkillCategory,
-        // deleteSkillCategory,
-        // changeSkillCategoryStatus,
+        editSkillCategory,
+        deleteSkillCategory,
+        changeSkillCategoryStatus,
     } = require("../controllers/admin_controllers/admin_categories");
 
     // ****USERS ROUTES****
@@ -66,7 +66,11 @@ module.exports = function (app) {
 
     app.route("/admin/categories").get(getCategoriesPage);
     app.route("/admin/categories/add_project_category").get(getAddProjectCategoryPage).post(addProjectCategory);
-    app.route("/admin/categories/edit_project_category").get(getEditProjectCategoryPage);
+    app.route("/admin/categories/edit_project_category/:id").get(getEditProjectCategoryPage).put(editProjectCategory);
+    app.route("/admin/categories/delete_project_category/:id").delete(deleteProjectCategory);
+    app.route("/admin/categories/status_project_category/:id").put(changeProjectCategoryStatus);
     app.route("/admin/categories/add_skill_category").get(getAddSkillCategoryPage).post(addSkillCategory);
-    app.route("/admin/categories/edit_skill_category").get(getEditSkillCategoryPage);
+    app.route("/admin/categories/edit_skill_category/:id").get(getEditSkillCategoryPage).put(editSkillCategory);
+    app.route("/admin/categories/delete_skill_category/:id").delete(deleteSkillCategory);
+    app.route("/admin/categories/status_skill_category/:id").put(changeSkillCategoryStatus);
 }
