@@ -219,73 +219,77 @@
         <h2> < SKILLS > </h2>
     </div>
 
-    <!--FRONT SKILLS LIST-->
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><%= frontCategory.name %></th>
-          </tr>
-        </thead>
-        <tbody>
-            <% frontSkill.forEach(function(front){ %>
-            <tr>
-                <td><%= front.name %></td>
-            </tr>
-            <% }) %>
-        </tbody>
-    </table>
-
-    <!--BACK SKILLS LIST-->
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><%= backCategory.name %></th>
-          </tr>
-        </thead>
-        <tbody>
-            <% backSkill.forEach(function(back){ %>
-            <tr>
-                <td><%= back.name %></td>
-            </tr>
-            <% }) %>
-        </tbody>
-    </table>
-
-    <!--DATABASE SKILLS LIST-->
-    
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><%= dataCategory.name %></th>
-          </tr>
-        </thead>
-        <tbody>
-            <% dataSkill.forEach(function(data){ %>
-            <tr>
-                <td><%= data.name %></td>
-            </tr>
-            <% }) %>
-        </tbody>
-    </table>
-
-    <!--DEVOPS SKILLS LIST-->
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><%= devCategory.name %></th>
-          </tr>
-        </thead>
-        <tbody>
-            <% devSkill.forEach(function(dev){ %>
-            <tr>
-                <td><%= dev.name %></td>
-            </tr>
-            <% }) %>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!--FRONT SKILLS LIST-->
+                        <div>
+                            <div class="card-content">
+                                <h4><%= frontCategory.name %></h4>
+                                <hr>
+                                <div class="row">
+                                    <% frontSkill.forEach(function(front){ %>
+                                    <div class="col">
+                                        <img src="/images/<%= front.image %>" alt="" style="width: 100px; height: 100px;">
+                                        <%= front.name %>
+                                    </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                        <!--BACK SKILLS LIST-->
+                        <div>
+                            <div class="card-content">
+                                <h4><%= backCategory.name %></h4>
+                                <hr>
+                                <div class="row">
+                                    <% backSkill.forEach(function(back){ %>
+                                    <div class="col">
+                                        <img src="/images/<%= back.image %>" alt="" style="width: 100px; height: 100px;">
+                                        <%= back.name %>
+                                    </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                        <!--DATABASE SKILLS LIST-->
+                        <div>
+                            <div class="card-content">
+                                <h4><%= dataCategory.name %></h4>
+                                <hr>
+                                <div class="row">
+                                    <% dataSkill.forEach(function(data){ %>
+                                    <div class="col">
+                                        <img src="/images/<%= data.image %>" alt="" style="width: 100px; height: 100px;">
+                                        <%= data.name %>
+                                    </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                        <!--DEVOPS SKILLS LIST-->
+                        <div>
+                            <div class="card-content">
+                                <h4><%= devCategory.name %></h4>
+                                <hr>
+                                <div class="row">
+                                    <% devSkill.forEach(function(dev){ %>
+                                    <div class="col">
+                                        <img src="/images/<%= dev.image %>" alt="" style="width: 100px; height: 100px;">
+                                        <%= dev.name %>
+                                    </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="section-title">
         <h2> < /SKILLS > </h2>
