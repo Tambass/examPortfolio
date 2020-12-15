@@ -69,7 +69,7 @@
     <!--PROJECTS LIST-->
 
     <% project.forEach(function(project){ %>
-    <div class="container portfolio-card">
+    <div class="container-fluid portfolio-card">
         <div class="row">
             
             <div class="col-md-6 portfolio-pics" style="background-image: url(/images/<%=project.image%>); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
@@ -145,13 +145,22 @@
 
     <!--ADMIN INFOS LIST-->
 
-    <ul>
-        <li><%= admin.firstname %></li>
-        <li><%= admin.lastname %></li>
-        <li><%= admin.email %></li>
-        <li><%= admin.phone %></li>
-    </ul>
-
+    <div class="container about-content">
+        <div class="row">
+            <div class="col-md-12">
+               <div class="card">
+                    <div class="card-body">
+                        <p>
+                            Développeur junior avec seulement 1 an d'expérience, je me suis pris de passion pour ce métier de développeur 
+                            fullstack qui me permet de rester dans la course, quelque soit l'endroit ou je travail et peu importe la mission
+                            que l'on me demande d'accomplir, je serai résoudre tous les problèmes !
+                        </p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    
     <div class="section-title">
         <h2> < /ABOUT > </h2>
     </div>

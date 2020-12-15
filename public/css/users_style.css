@@ -101,9 +101,13 @@ html {
     margin: 150px 50px;
 }
 
+/***********/
 /*CITATIONS*/
+/***********/
+
 .quote{
     padding: 20px 400px;
+    margin: 150px auto;
 }
 
 .quote-image{
@@ -173,5 +177,20 @@ html {
 }
 
 .portfolio-card .portfolio-content p {
+  font-size: 2rem;
+}
+
+/*****************/
+/* SECTION ABOUT */
+/*****************/
+
+.about-content .card{
+  -webkit-box-shadow: 0px 0px 16px 2px rgba(141,85,150,1);
+  -moz-box-shadow: 0px 0px 16px 2px rgba(141,85,150,1);
+  box-shadow: 0px 0px 16px 2px rgba(141,85,150,1);
+  margin: 40px auto;
+}
+
+.about-content p{
   font-size: 2rem;
 }
