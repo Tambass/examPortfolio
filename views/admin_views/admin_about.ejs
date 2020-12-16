@@ -94,45 +94,9 @@
                                                 <input type="text" class="form-control" name="city" id="city" value="<%= admin.city %>">
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary">Modifier</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-
-                                        </form>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="change-password">
-
-                        <!-- Change password button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#changePass">
-                            <i class="fab fa-expeditedssl"></i>
-                            Change Password
-                        </button>
-                    
-                        <!-- Password Modal -->
-                        <div class="modal fade" id="changePass" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Modifier le mot de passe</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                    
-                                        <form>
-
                                             <div class="form-group">
-                                            <label for="password">Mot de passe</label>
-                                            <input type="text" class="form-control" name="password" id="password" value="< %= % >">
+                                                <label for="city">Mot de passe</label>
+                                                <input type="text" class="form-control" name="password" id="password" value="<%= admin.password %>">
                                             </div>
 
                                             <button type="submit" class="btn btn-primary">Modifier</button>
@@ -148,6 +112,47 @@
                         </div>
 
                     </div>
+
+                    <!-- <div class="change-password"> -->
+
+                        <!-- Change password button trigger modal -->
+                        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#changePass">
+                            <i class="fab fa-expeditedssl"></i>
+                            Change Password
+                        </button> -->
+                    
+                        <!-- Password Modal -->
+                        <!-- <div class="modal fade" id="changePass" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Modifier le mot de passe</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    
+                                        <form method="POST" action="/admin/about/<%= admin.id%>?_method=PUT">
+
+                                            <div class="form-group">
+                                            <label for="password">Mot de passe</label>
+                                            <input type="text" class="form-control" name="password" id="password" value="<%= admin.password %>">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Modifier</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+
+                                        </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    <!-- </div> -->
                     
                 </div>
             </div>

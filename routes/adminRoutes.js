@@ -11,7 +11,6 @@ module.exports = function (app) {
     const {
         getAboutPage,
         editProfile,
-        // editPass,
     } = require("../controllers/admin_controllers/admin_about");
 
     // AdminPortfolioPage
