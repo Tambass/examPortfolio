@@ -92,7 +92,7 @@
 </section>
 
 <!--CITATION-->
-
+<hr style="margin: 150px auto;">
 <!-- <section class="quote">
 
     <div class="quote-image">
@@ -168,7 +168,7 @@
 </section>
 
 <!--CITATION-->
-
+<hr style="margin: 150px auto;">
 <!-- <section class="quote">
 
     <div class="quote-image" style="display: flex; justify-content: flex-end;">
@@ -219,7 +219,7 @@
         <h2> < SKILLS > </h2>
     </div>
 
-    <div class="container">
+    <div class="container skills-container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -233,7 +233,7 @@
                                     <% frontSkill.forEach(function(front){ %>
                                     <div class="col">
                                         <img src="/images/<%= front.image %>" alt="" style="width: 100px; height: 100px;">
-                                        <%= front.name %>
+                                        <h5><%= front.name %></h5>
                                     </div>
                                     <% }) %>
                                 </div>
@@ -248,7 +248,7 @@
                                     <% backSkill.forEach(function(back){ %>
                                     <div class="col">
                                         <img src="/images/<%= back.image %>" alt="" style="width: 100px; height: 100px;">
-                                        <%= back.name %>
+                                        <h5><%= back.name %></h5>
                                     </div>
                                     <% }) %>
                                 </div>
@@ -263,7 +263,7 @@
                                     <% dataSkill.forEach(function(data){ %>
                                     <div class="col">
                                         <img src="/images/<%= data.image %>" alt="" style="width: 100px; height: 100px;">
-                                        <%= data.name %>
+                                        <h5><%= data.name %></h5>
                                     </div>
                                     <% }) %>
                                 </div>
@@ -278,7 +278,7 @@
                                     <% devSkill.forEach(function(dev){ %>
                                     <div class="col">
                                         <img src="/images/<%= dev.image %>" alt="" style="width: 100px; height: 100px;">
-                                        <%= dev.name %>
+                                        <h5><%= dev.name %></h5>
                                     </div>
                                     <% }) %>
                                 </div>
