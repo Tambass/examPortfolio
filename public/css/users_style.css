@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 
-html {
+html, body {
+    min-height: 100%;
+    width: 100%;
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
@@ -266,4 +268,37 @@ html {
 
 .contact-card .card-body .fa-discord:hover {
   color: #7289DA;
+}
+
+
+/**************/
+/* LOGIN PAGE */
+/**************/
+
+.container-login .row{
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-login .row form{
+  height: 700px;
+  font-size: 4rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-login .row form input {
+  font-size: 4rem;
+  border-radius: 25px;
+}
+
+.container-login .row form button {
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 25px;
 }
