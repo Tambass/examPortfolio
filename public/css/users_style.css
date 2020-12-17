@@ -108,19 +108,42 @@ html, body {
 /***********/
 
 .quote{
-    padding: 20px 400px;
+    padding: 20px 300px;
     margin: 150px auto;
 }
 
 .quote-image{
-    margin: 50px 0;
+    margin: 50px auto;
+}
+
+.quote-image #corde {
+  animation: quote 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: center;
+}
+
+@keyframes quote {
+  from{
+    transform: rotateZ(0deg);
+  } to {
+    transform: rotateZ(360deg);
+  }
 }
 
 .quote-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
-.quote-content p{
+
+.quote-content h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.quote-content p {
     font-size: 3rem;
 }
 
