@@ -276,7 +276,7 @@ html, body {
 /**************/
 
 .container-login .row{
-  height: 86vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,4 +301,36 @@ html, body {
   font-size: 3rem;
   font-weight: bold;
   border-radius: 25px;
+}
+
+/******************/
+/* SECTION FOOTER */
+/******************/
+
+.footer {
+  background-color: #000;
+}
+
+.footer .container{
+  background-color: #000;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .container .row {
+  width: 100%;
+}
+
+.footer .container .row .col-md-12 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer .container a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 3rem;
 }
