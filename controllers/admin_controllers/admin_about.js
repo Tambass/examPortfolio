@@ -5,7 +5,11 @@ module.exports = {
         const admin = await query("SELECT admin_id AS id, firstname, lastname, email, phone, adress, zipcode, city, password FROM Admin")
 
         try {
-            res.render("admin_views/admin_about", {title: "About Admin", admin: admin[0]});
+            if(req.session.adminId){
+                res.render("admin_views/admin_about", {title: "About Admin", admin: admin[0]});
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }

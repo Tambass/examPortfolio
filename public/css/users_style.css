@@ -116,18 +116,33 @@ html, body {
     margin: 50px auto;
 }
 
-.quote-image #corde {
-  animation: quote 2000ms;
+.quote-image #corde-right {
+  animation: quote-right 2000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform-origin: center;
 }
 
-@keyframes quote {
+@keyframes quote-right {
   from{
     transform: rotateZ(0deg);
   } to {
     transform: rotateZ(360deg);
+  }
+}
+
+.quote-image #corde-left {
+  animation: quote-left 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: center;
+}
+
+@keyframes quote-left {
+  from{
+    transform: rotateZ(360deg);
+  } to {
+    transform: rotateZ(0deg);
   }
 }
 

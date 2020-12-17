@@ -8,11 +8,15 @@ module.exports = {
         const skillCategory = await query("SELECT technology_category_id AS id, name, status FROM Technology_Category");
         
         try {
-            res.render("admin_views/admin_categories", {
-                title: "Admin Categories",
-                projectCategory,
-                skillCategory,
-            });
+            if(req.session.adminId){
+                res.render("admin_views/admin_categories", {
+                    title: "Admin Categories",
+                    projectCategory,
+                    skillCategory,
+                });
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }
