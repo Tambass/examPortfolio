@@ -76,6 +76,7 @@
     <!--PROJECTS LIST-->
 
     <% project.forEach(function(project){ %>
+    <% if(project.status>0){ %>
     <div class="container-fluid portfolio-card">
         <div class="row">
 
@@ -92,6 +93,8 @@
             </div>
         </div>
     </div>
+    <%} else {%>
+    <% } %>
     <% }) %>
 
     <div class="section-title">
@@ -250,11 +253,14 @@
                                 <hr>
                                 <div class="row">
                                     <% frontSkill.forEach(function(front){ %>
+                                    <% if(front.status>0) { %>
                                     <div class="col">
                                         <img src="/images/<%= front.image %>" alt=""
                                             style="width: 100px; height: 100px;">
                                         <h5><%= front.name %></h5>
                                     </div>
+                                    <%} else {%>
+                                    <% } %>
                                     <% }) %>
                                 </div>
                             </div>
@@ -266,11 +272,14 @@
                                 <hr>
                                 <div class="row">
                                     <% backSkill.forEach(function(back){ %>
+                                    <% if(back.status>0) { %>
                                     <div class="col">
                                         <img src="/images/<%= back.image %>" alt=""
                                             style="width: 100px; height: 100px;">
                                         <h5><%= back.name %></h5>
                                     </div>
+                                    <%} else {%>
+                                    <% } %>
                                     <% }) %>
                                 </div>
                             </div>
@@ -282,11 +291,14 @@
                                 <hr>
                                 <div class="row">
                                     <% dataSkill.forEach(function(data){ %>
+                                    <% if(data.status>0) { %>
                                     <div class="col">
                                         <img src="/images/<%= data.image %>" alt=""
                                             style="width: 100px; height: 100px;">
                                         <h5><%= data.name %></h5>
                                     </div>
+                                    <%} else {%>
+                                    <% } %>
                                     <% }) %>
                                 </div>
                             </div>
@@ -298,10 +310,13 @@
                                 <hr>
                                 <div class="row">
                                     <% devSkill.forEach(function(dev){ %>
+                                    <% if(dev.status>0) { %>
                                     <div class="col">
                                         <img src="/images/<%= dev.image %>" alt="" style="width: 100px; height: 100px;">
                                         <h5><%= dev.name %></h5>
                                     </div>
+                                    <%} else {%>
+                                    <% } %>
                                     <% }) %>
                                 </div>
                             </div>
