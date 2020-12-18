@@ -7,18 +7,14 @@ module.exports = {
 
         const skillCategory = await query("SELECT technology_category_id AS id, name, status FROM Technology_Category");
         
-        try {
-            if(req.session.adminId){
-                res.render("admin_views/admin_categories", {
-                    title: "Admin Categories",
-                    projectCategory,
-                    skillCategory,
-                });
-            } else {
-                res.redirect("/login");
-            }
-        } catch (err) {
-            res.send(err);
+        if(req.session.adminId){
+            res.render("admin_views/admin_categories", {
+                title: "Admin Categories",
+                projectCategory,
+                skillCategory,
+            });            
+        } else {
+            res.redirect("/login");
         }
     },
 
@@ -28,7 +24,11 @@ module.exports = {
 
     // AFFICHE LA PAGE D'AJOUT D'UNE CATEGORIE PROJET
     getAddProjectCategoryPage: (req, res) => {
-        res.render("admin_views/admin_addProjectCategory", {title: "Add Project Category"});
+        if(req.session.adminId){
+            res.render("admin_views/admin_addProjectCategory", {title: "Add Project Category"});            
+        } else {
+            res.redirect("/login");
+        }
     },
 
     // AJOUTE UNE CATEGORIE PROJET
@@ -55,10 +55,14 @@ module.exports = {
         const projectCategory = await query("SELECT project_category_id AS id, name, status FROM Project_Category WHERE project_category_id = '" + id + "';");
 
         try {
-            res.render("admin_views/admin_editProjectCategory", {
-                title: "Edit Project Category",
-                projectCategory: projectCategory[0],
-            });            
+            if(req.session.adminId){
+                res.render("admin_views/admin_editProjectCategory", {
+                    title: "Edit Project Category",
+                    projectCategory: projectCategory[0],
+                });                
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             return res.send(err);
         }
@@ -120,7 +124,11 @@ module.exports = {
 
     // AFFICHE LA PAGE D'AJOUT D'UNE CATEGORIE COMPETENCE
     getAddSkillCategoryPage: (req, res) => {
-        res.render("admin_views/admin_addSkillCategory", {title: "Add Skill Category"});
+        if(req.session.adminId){
+            res.render("admin_views/admin_addSkillCategory", {title: "Add Skill Category"});            
+        } else {
+            res.redirect("/login");
+        }
     },
 
     //AJOUTE UNE CATEGORIE COMPETENCE
@@ -147,10 +155,14 @@ module.exports = {
         const skillCategory = await query("SELECT technology_category_id AS id, name, status FROM Technology_Category WHERE technology_category_id = '" + id + "';");
 
         try {
-            res.render("admin_views/admin_editSkillCategory", {
-                title: "Edit Skill Category",
-                skillCategory: skillCategory[0],
-            });            
+            if(req.session.adminId){
+                res.render("admin_views/admin_editSkillCategory", {
+                    title: "Edit Skill Category",
+                    skillCategory: skillCategory[0],
+                });                
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             return res.send(err);
         }

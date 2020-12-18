@@ -15,10 +15,14 @@ module.exports = {
         const skill = await query("SELECT t.technologie_id AS id, t.name AS name, t.image, t.status, tc.name AS category FROM Technologie AS t INNER JOIN Technology_Category AS tc ON tc.technology_category_id = t.technology_category_id;")
 
         try {
-            res.render("admin_views/admin_skills", {
-                title: "Admin Skills",
-                skill,
-            });
+            if(req.session.adminId){
+                res.render("admin_views/admin_skills", {
+                    title: "Admin Skills",
+                    skill,
+                });
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }
@@ -30,10 +34,14 @@ module.exports = {
         const category = await query("SELECT technology_category_id AS id, name FROM Technology_Category;");
 
         try {
-            res.render("admin_views/admin_addSkill", {
-                title: "Add Skill",
-                category,
-            });            
+            if(req.session.adminId){
+                res.render("admin_views/admin_addSkill", {
+                    title: "Add Skill",
+                    category,
+                });            
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }
@@ -78,11 +86,15 @@ module.exports = {
         const category = await query("SELECT technology_category_id AS id, name FROM Technology_Category;");
 
         try {
-            res.render("admin_views/admin_editSkill", {
-                title: "Edit Skill",
-                skill: skill[0],
-                category,
-            });            
+            if(req.session.adminId){
+                res.render("admin_views/admin_editSkill", {
+                    title: "Edit Skill",
+                    skill: skill[0],
+                    category,
+                });            
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }

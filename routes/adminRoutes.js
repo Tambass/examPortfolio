@@ -4,6 +4,9 @@ module.exports = function (app) {
     // ****ADMIN CONTROLLERS****
     // *************************
 
+    // Admin Ensure Authenticated
+    // const ensureAuthenticated = require("../middleware/auth.js");
+
     // HomePage
     const {getAdminPage} = require("../controllers/admin_controllers/admin_homePage");
 

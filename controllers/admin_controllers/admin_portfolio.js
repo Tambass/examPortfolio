@@ -14,10 +14,14 @@ module.exports = {
         const project = await query("SELECT project_id AS id, name, status FROM Project");
 
         try {
-            res.render("admin_views/admin_portfolio", {
-                title: "Admin Portfolio",
-                project,
-            });        
+            if(req.session.adminId){
+                res.render("admin_views/admin_portfolio", {
+                    title: "Admin Portfolio",
+                    project,
+                });              
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }
@@ -29,10 +33,14 @@ module.exports = {
         const category = await query("SELECT project_category_id AS id, name FROM Project_Category;");
 
         try {
-            res.render("admin_views/admin_addProject", {
-                title: "Add project",
-                category,
-            });
+            if(req.session.adminId){
+                res.render("admin_views/admin_addProject", {
+                    title: "Add project",
+                    category,
+                });
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }
@@ -80,11 +88,15 @@ module.exports = {
         const category = await query("SELECT project_category_id AS id, name FROM Project_Category;");
 
         try {
-            res.render("admin_views/admin_editProject", {
-                title: "Edit project",
-                project: project[0],
-                category,
-            });            
+            if(req.session.adminId){
+                res.render("admin_views/admin_editProject", {
+                    title: "Edit project",
+                    project: project[0],
+                    category,
+                });            
+            } else {
+                res.redirect("/login");
+            }
         } catch (err) {
             res.send(err);
         }

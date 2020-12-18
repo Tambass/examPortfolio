@@ -4,14 +4,10 @@ module.exports = {
     getAboutPage: async (req, res) => {
         const admin = await query("SELECT admin_id AS id, firstname, lastname, email, phone, adress, zipcode, city, password FROM Admin")
 
-        try {
-            if(req.session.adminId){
-                res.render("admin_views/admin_about", {title: "About Admin", admin: admin[0]});
-            } else {
-                res.redirect("/login");
-            }
-        } catch (err) {
-            res.send(err);
+        if(req.session.adminId){
+            res.render("admin_views/admin_about", {title: "About Admin", admin: admin[0]});            
+        } else {
+            res.redirect("/login");
         }
     },
 
