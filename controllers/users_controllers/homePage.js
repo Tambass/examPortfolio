@@ -23,7 +23,8 @@ module.exports = {
 
         try {
             res.render("users_views/index", {
-                title: "Home",
+                title: "Développeur Web en Vendée",
+                description: "développeur web junior",
                 admin: admin[0],
                 project,
                 frontCategory: frontCategory[0],

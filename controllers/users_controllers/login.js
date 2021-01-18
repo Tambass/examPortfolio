@@ -20,7 +20,7 @@ module.exports = {
 
     // AFFICHE LA PAGE DE LOGIN
     getLogin: async (req, res, next) => {
-        res.render("users_views/login", {title: "Login"});
+        res.render("users_views/login", {title: "Login", description: "développeur web junior",});
     },
 
     // ENVOI LE LOG

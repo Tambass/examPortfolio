@@ -9,6 +9,28 @@ const logger = require("morgan");
 const util = require("util");
 const session = require("express-session");
 const fileupload = require("express-fileupload");
+const robots = require("express-robots-txt");
+
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+// --------Swagger--------
+
+const swaggerOptions = {
+    swaggerDefinition: {
+      info: {
+        title: "API Portfolio",
+        version: '1.0.0',
+      },
+    },
+    apis: ['./routes/*.js'],
+  };
+
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+// --------Robot.txt--------
+app.use(robots({ UserAgent: '*', Disallow: '/admin' }));
 
 // --------Body Parser--------
 
